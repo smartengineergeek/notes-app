@@ -1,0 +1,15 @@
+.header{
+    background-color: cornflowerblue;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.footer{
+    background-color: #322f31;
+    color: #fff;
+    text-align: center;
+    height: 40px;
+}

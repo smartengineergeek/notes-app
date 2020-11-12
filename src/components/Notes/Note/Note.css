@@ -1,0 +1,17 @@
+.single-note{
+    border: solid 1px lightgray;
+    padding: 10px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+.single-note-view-button{
+    background: cornflowerblue;
+    color: #fff;
+    border: solid 1px;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}

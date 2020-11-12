@@ -1,0 +1,25 @@
+.tasks{
+    border: solid 1px lightgray;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-evenly;
+}
+.tasks-col{
+    border: solid 1px lightgray;
+    width: 30%;
+}
+.tasks-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.tasks-type{
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: cornflowerblue;
+    color: #fff;
+}
