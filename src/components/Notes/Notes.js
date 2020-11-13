@@ -8,7 +8,7 @@ class Notes extends React.Component{
         document.getElementById("myModal").style.display = "block";
     }
     render(){
-        let notes = JSON.parse(localStorage.getItem("notes-app-data"));
+        let notes = JSON.parse(localStorage.getItem("tasks-app"));
         return(
             <div className="tasks">
                 <div className="tasks-selected-for-development tasks-col">

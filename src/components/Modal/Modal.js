@@ -16,10 +16,10 @@ class Modal extends React.Component{
     }
     render(){
         return(
-            <div id="myModal" class="modal">
+            <div id="myModal" className="modal">
 
-                <div class="modal-content">
-                    <span class="close" onClick={this.closeHandler}>&times;</span>
+                <div className="modal-content">
+                    <span className="close" onClick={this.closeHandler}>&times;</span>
                     <p>Some text in the Modal..</p>
                 </div>
 

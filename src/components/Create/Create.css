@@ -1,0 +1,37 @@
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10%;
+    list-style-type: none;
+    border: solid 1px lightgray;
+}
+.create{
+    height: 700px;
+}
+.create form{
+    padding: 10%;
+    padding-top: 10px;
+}
+.form-row textarea{
+    border: solid 1px lightblue;
+    padding: 10px;
+    resize: none;
+}
+.form-row label, heading{
+    font-weight: bold;
+}
+.heading{
+    text-align: center;
+}
+.btn-row{
+    justify-content: space-around;
+    display: flex;
+    padding-top: 20px;
+}
+.error{
+    color: indianred;
+}
+.success{
+    color: green;
+}

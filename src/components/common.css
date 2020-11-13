@@ -1,0 +1,13 @@
+.blue-button{
+    width: 100px;
+    height: 40px;
+    background-color: cornflowerblue;
+    border: solid 1px cornflowerblue;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+a{
+    text-decoration: unset;
+    color: #fff;
+}

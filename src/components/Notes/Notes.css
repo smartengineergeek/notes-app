@@ -13,7 +13,7 @@
 .tasks-list{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
 .tasks-type{
     text-align: center;
