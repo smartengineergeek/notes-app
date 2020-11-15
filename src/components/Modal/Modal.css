@@ -19,6 +19,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    color: cornflowerblue;
     width: 80%;
   }
   
@@ -35,4 +36,8 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .task-body{
+    padding-top: 10px;
   }

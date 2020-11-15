@@ -11,3 +11,6 @@ a{
     text-decoration: unset;
     color: #fff;
 }
+.text-center{
+    text-align: center;
+}

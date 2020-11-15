@@ -1,4 +1,5 @@
-1) /create form
+1) /create form - done
 2) show data on modal
 3) update & delete
-4)
+4) drag and drop - done
+5) left drag and drop from inprogress to selected

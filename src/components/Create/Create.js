@@ -55,7 +55,7 @@ class Create extends React.Component{
                 id: new Date().getTime(),
                 heading: this.headingInputRef.value,
                 description: this.descriptionInputRef.value,
-                status: "selected-for-development"
+                status: "selected"
             };
             tasks.push(task);
             localStorage.setItem("tasks-app", JSON.stringify(tasks));

@@ -20,7 +20,12 @@ class Modal extends React.Component{
 
                 <div className="modal-content">
                     <span className="close" onClick={this.closeHandler}>&times;</span>
-                    <p>Some text in the Modal..</p>
+                    <h3 className="text-center">Task Details</h3>
+                    <div className="task-body">
+                        <h4>Id - <span id="modal-id" /></h4>
+                        <h4>Heading - <span id="modal-heading" /></h4>
+                        <p>Description - <span id="modal-description" /></p>
+                    </div>
                 </div>
 
             </div>

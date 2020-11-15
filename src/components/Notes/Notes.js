@@ -4,8 +4,11 @@ import Note from './Note/Note';
 import './Notes.css';
 
 class Notes extends React.Component{
-    clickHandler = () => {
+    clickHandler = note => {
         document.getElementById("myModal").style.display = "block";
+        document.getElementById("modal-id").innerHTML = note.id;
+        document.getElementById("modal-heading").innerHTML = (note.heading).toUpperCase();
+        document.getElementById("modal-description").innerHTML = note.description;
     }
     onDragStart(event) {
         event.dataTransfer.effectAllowed = "move";
@@ -25,7 +28,7 @@ class Notes extends React.Component{
             let dropzone = document.getElementById("dropzone-inprogress");
       
             let id = event.dataTransfer.getData("text");
-            console.log(" event class ", event.target.className, " id ", id);
+            // console.log(" event class ", event.target.className, " id ", id);
             
             if(id != ""){
                 const draggableElement = document.getElementById(id);
@@ -48,7 +51,7 @@ class Notes extends React.Component{
             let dropzone = document.getElementById("dropzone-done");
       
             let id = event.dataTransfer.getData("text");
-            console.log(" event class ", event.target.className, " id ", id);
+            // console.log(" event class ", event.target.className, " id ", id);
     
             if(id != ""){
                 const draggableElement = document.getElementById(id);
