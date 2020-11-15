@@ -23,3 +23,8 @@
     background-color: cornflowerblue;
     color: #fff;
 }
+.on-drop{
+    border: 2px dotted #efefef;
+    min-height: 50px;
+    width: 100%;
+}
