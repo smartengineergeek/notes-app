@@ -50,14 +50,15 @@ class Create extends React.Component{
         if(this.validation()){
             let tasks = [];
             if(localStorage.getItem("tasks-app"))
-                tasks = [JSON.parse(localStorage.getItem("tasks-app"))];
+                tasks = JSON.parse(localStorage.getItem("tasks-app"));
             let task = {
+                id: new Date().getTime(),
                 heading: this.headingInputRef.value,
                 description: this.descriptionInputRef.value,
                 status: "selected-for-development"
             };
             tasks.push(task);
-            localStorage.setItem("tasks-app", JSON.stringify(task));
+            localStorage.setItem("tasks-app", JSON.stringify(tasks));
             this.setState({successMessage: "data submitted"});
             //this.formInterval = setTimeout(() => {
           //      this.clearForm();
