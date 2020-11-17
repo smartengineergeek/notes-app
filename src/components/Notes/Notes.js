@@ -137,7 +137,7 @@ class Notes extends React.Component{
                         </div>
                     </div>
                 </div>
-                {this.state.isModalShown && <Modal data={this.state.modalData} callbackModal={this.callbackModal}/>}
+                {this.state.isModalShown && <Modal data={this.state.modalData} callbackModal={this.callbackModal} history={this.props.history}/>}
             </React.Fragment>
         )
     }
