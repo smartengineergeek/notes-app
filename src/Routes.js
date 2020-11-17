@@ -8,7 +8,7 @@ import {
 import Notes from './components/Notes/Notes';
 import Create from './components/Create/Create';
 import { Header, Footer } from './Layouts/Header/Header';
-import Modal from './components/Modal/Modal';
+import Update from './components/Update/Update';
 
 export default function Routes(){
     return(
@@ -22,11 +22,13 @@ export default function Routes(){
                 <Route exact path="/create">
                     <Create />
                 </Route>
+                <Route path="/update/:id">
+                    <Update />
+                </Route>
                 <Route render={() => <div>404</div>} />
             </Switch>
 
             <Footer />
-            <Modal />
         </Router>
     )
 }
