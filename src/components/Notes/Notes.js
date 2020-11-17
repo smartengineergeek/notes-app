@@ -59,52 +59,31 @@ class Notes extends React.Component{
     }
 
     render(){
+        let displayTask = [
+            { type: "Selected For Development", status: "selected" },
+            { type: "In Progress", status: "inprogress" },
+            { type: "Done", status: "done" }
+        ];
         let notes = JSON.parse(localStorage.getItem("tasks-app"));
         return(
             <React.Fragment>
                 <div className="tasks">
-                    <div className="tasks-selected tasks-col">
-                        <p className="tasks-type">Selected For Development</p>
-                        <div className="tasks-list">
-                            <div dropid="selected" className="on-drop" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
-                            {notes != null && notes.map(note => (
-                                <React.Fragment key={note.id}>
-                                {(note.status === "selected") &&
-                                    <div id={`outerdiv-${note.id}`} draggable="true" onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
-                                        <Note clickHandler={this.clickHandler} note={note} />
-                                    </div>}
-                                </React.Fragment>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="tasks-inprogress tasks-col">
-                        <p className="tasks-type">InProgress</p>
-                        <div className="tasks-list">
-                            <div dropid="inprogress" className="on-drop" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
-                            {notes != null && notes.map(note => (
-                                <React.Fragment key={note.id}>
-                                {(note.status === "inprogress") &&
-                                    <div id={`outerdiv-${note.id}`} draggable="true" onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
-                                        <Note clickHandler={this.clickHandler} note={note} />
-                                    </div>}
-                                </React.Fragment>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="tasks-done tasks-col">
-                        <p className="tasks-type">Done</p>
-                        <div className="tasks-list">
-                            <div dropid="done" className="on-drop" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
-                            {notes != null && notes.map(note => (
-                                <React.Fragment key={note.id}>
-                                    {(note.status === "done") && 
+                    {displayTask.map(display => (
+                        <div className="tasks-col" key={`status-div-${display.status}`}>
+                            <p className="tasks-type">{display.type}</p>
+                            <div className="tasks-list">
+                                <div dropid={display.status} className="on-drop" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
+                                {notes != null && notes.map(note => (
+                                    <React.Fragment key={note.id}>
+                                    {(note.status === display.status) &&
                                         <div id={`outerdiv-${note.id}`} draggable="true" onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
                                             <Note clickHandler={this.clickHandler} note={note} />
                                         </div>}
-                                </React.Fragment>
-                            ))}
+                                    </React.Fragment>
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
                 {this.state.isModalShown && <Modal data={this.state.modalData} callbackModal={this.callbackModal} history={this.props.history}/>}
             </React.Fragment>
@@ -113,3 +92,4 @@ class Notes extends React.Component{
 }
 
 export default Notes;
+
