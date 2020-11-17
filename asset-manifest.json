@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/notes-app/static/css/main.607a2299.chunk.css",
+    "main.js": "/notes-app/static/js/main.803a0b3b.chunk.js",
+    "main.js.map": "/notes-app/static/js/main.803a0b3b.chunk.js.map",
+    "runtime-main.js": "/notes-app/static/js/runtime-main.7b1343b4.js",
+    "runtime-main.js.map": "/notes-app/static/js/runtime-main.7b1343b4.js.map",
+    "static/js/2.75c81bde.chunk.js": "/notes-app/static/js/2.75c81bde.chunk.js",
+    "static/js/2.75c81bde.chunk.js.map": "/notes-app/static/js/2.75c81bde.chunk.js.map",
+    "static/js/3.ae9576a1.chunk.js": "/notes-app/static/js/3.ae9576a1.chunk.js",
+    "static/js/3.ae9576a1.chunk.js.map": "/notes-app/static/js/3.ae9576a1.chunk.js.map",
+    "index.html": "/notes-app/index.html",
+    "static/css/main.607a2299.chunk.css.map": "/notes-app/static/css/main.607a2299.chunk.css.map",
+    "static/js/2.75c81bde.chunk.js.LICENSE.txt": "/notes-app/static/js/2.75c81bde.chunk.js.LICENSE.txt",
+    "static/media/spinner.dbb22bcf.gif": "/notes-app/static/media/spinner.dbb22bcf.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b1343b4.js",
+    "static/js/2.75c81bde.chunk.js",
+    "static/css/main.607a2299.chunk.css",
+    "static/js/main.803a0b3b.chunk.js"
+  ]
+}
