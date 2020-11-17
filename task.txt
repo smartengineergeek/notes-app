@@ -5,4 +5,5 @@
 5) left drag and drop from inprogress to selected - done
 6) move modal to Notes.js file for edit purpose - done
 7) code redundancy - done
-8) change order on drop
+8) change order on drop - done
+9) responsive css

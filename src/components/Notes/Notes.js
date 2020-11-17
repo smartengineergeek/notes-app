@@ -44,13 +44,18 @@ class Notes extends React.Component{
     }      
     onDrop = (event) => {
         let status = event.target.getAttribute("dropid");
-        console.log(" status ", status, " dragId ", this.state.dragId);
         if(localStorage.getItem("tasks-app") && this.state.dragId != ""){
             let tasks = JSON.parse(localStorage.getItem("tasks-app"));
-            for(let task of tasks){
-                if((task.id).toString() === (this.state.dragId).split("-")[1])
+            let index = -1, updateTask = null;
+            tasks.forEach((task, i) => {
+                if((task.id).toString() === (this.state.dragId).split("-")[1]){
                     task.status = status;                     
-            }
+                    index = i;
+                    updateTask = task;
+                }
+            });
+            (index > -1) && tasks.splice(index, 1);
+            (updateTask != null) && tasks.unshift(updateTask);
             localStorage.setItem("tasks-app", JSON.stringify(tasks));
         }
         
