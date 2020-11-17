@@ -14,3 +14,34 @@ a{
 .text-center{
     text-align: center;
 }
+.function-button{
+    background: cornflowerblue;
+    color: #fff;
+    border: solid 1px;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+.danger-button{
+    background: red;
+    color: #fff;
+    border: solid 1px;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+.success-tick:before{
+  content:'\2713';
+  display:inline-block;
+  color:lightgreen;
+  padding:0 6px 0 0;
+}
+.success-tick{
+    font-size:2em;
+}
+.highlight{
+    font-weight: bold;
+    color: #000;
+}

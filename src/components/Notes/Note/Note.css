@@ -6,12 +6,3 @@
     margin-right: 15px;
     margin-top: 10px;
 }
-.single-note-view-button{
-    background: cornflowerblue;
-    color: #fff;
-    border: solid 1px;
-    border-radius: 10px;
-    height: 30px;
-    width: 100px;
-    cursor: pointer;
-}

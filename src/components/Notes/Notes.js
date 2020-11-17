@@ -1,14 +1,32 @@
 import React from 'react';
 
+import Modal from '../Modal/Modal';
 import Note from './Note/Note';
 import './Notes.css';
 
 class Notes extends React.Component{
+    state = {
+        isModalShown: false,
+        modalData: null
+    }
     clickHandler = note => {
-        document.getElementById("myModal").style.display = "block";
-        document.getElementById("modal-id").innerHTML = note.id;
-        document.getElementById("modal-heading").innerHTML = (note.heading).toUpperCase();
-        document.getElementById("modal-description").innerHTML = note.description;
+        this.setState({ isModalShown: true, modalData: note });
+    }
+    callbackModal = (action, id) => {
+        if(action === "close")
+            this.setState({ isModalShown: false });
+        else if(action === "delete"){
+            let tasks = JSON.parse(localStorage.getItem("tasks-app"));
+            let indexx = -1;
+            tasks.forEach((task, index) => {
+                if(task.id === id)
+                    indexx = index; 
+            });
+            indexx > -1 && tasks.splice(indexx, 1);
+            document.getElementsByClassName("task-body")[0].innerHTML = `Task id <span class="highlight">${id}</span> is deleted successfully<span class="success-tick" />`;
+            console.log(tasks)
+            // localStorage.setItem("tasks-app", JSON.stringify(tasks));
+        }
     }
     onDragStart(event) {
         event.dataTransfer.effectAllowed = "move";
@@ -78,46 +96,49 @@ class Notes extends React.Component{
     render(){
         let notes = JSON.parse(localStorage.getItem("tasks-app"));
         return(
-            <div className="tasks">
-                <div className="tasks-selected tasks-col">
-                    <p className="tasks-type">Selected For Development</p>
-                    <div className="tasks-list">
-                        {notes != null && notes.map(note => (
-                            <React.Fragment key={note.id}>
-                            {(note.status === "selected") &&
-                                <div id={`outerdiv-${note.id}`} draggable="true" onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
-                                    <Note clickHandler={this.clickHandler} note={note} />
-                                </div>}
-                            </React.Fragment>
-                        ))}
+            <React.Fragment>
+                <div className="tasks">
+                    <div className="tasks-selected tasks-col">
+                        <p className="tasks-type">Selected For Development</p>
+                        <div className="tasks-list">
+                            {notes != null && notes.map(note => (
+                                <React.Fragment key={note.id}>
+                                {(note.status === "selected") &&
+                                    <div id={`outerdiv-${note.id}`} draggable="true" onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
+                                        <Note clickHandler={this.clickHandler} note={note} />
+                                    </div>}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="tasks-inprogress tasks-col">
+                        <p className="tasks-type">InProgress</p>
+                        <div className="tasks-list">
+                            <div id="dropzone-inprogress" className="on-drop drop-from-selected" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
+                            {notes != null && notes.map(note => (
+                                <React.Fragment key={note.id}>
+                                {(note.status === "inprogress") &&
+                                    <div id={`outerdiv-${note.id}`} draggable="true" onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
+                                        <Note clickHandler={this.clickHandler} note={note} />
+                                    </div>}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="tasks-done tasks-col">
+                        <p className="tasks-type">Done</p>
+                        <div className="tasks-list">
+                            <div id="dropzone-done" className="on-drop drop-from-inprogress" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
+                            {notes != null && notes.map(note => (
+                                <React.Fragment key={note.id}>
+                                    {(note.status === "done") && <Note clickHandler={this.clickHandler} note={note} />}
+                                </React.Fragment>
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <div className="tasks-inprogress tasks-col">
-                    <p className="tasks-type">InProgress</p>
-                    <div className="tasks-list">
-                        <div id="dropzone-inprogress" className="on-drop drop-from-selected" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
-                        {notes != null && notes.map(note => (
-                            <React.Fragment key={note.id}>
-                            {(note.status === "inprogress") &&
-                                <div id={`outerdiv-${note.id}`} draggable="true" onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
-                                    <Note clickHandler={this.clickHandler} note={note} />
-                                </div>}
-                            </React.Fragment>
-                        ))}
-                    </div>
-                </div>
-                <div className="tasks-done tasks-col">
-                    <p className="tasks-type">Done</p>
-                    <div className="tasks-list">
-                        <div id="dropzone-done" className="on-drop drop-from-inprogress" onDragOver={this.onDragOver} onDrop={this.onDrop}></div>
-                        {notes != null && notes.map(note => (
-                            <React.Fragment key={note.id}>
-                                {(note.status === "done") && <Note clickHandler={this.clickHandler} note={note} />}
-                            </React.Fragment>
-                        ))}
-                    </div>
-                </div>
-            </div>
+                {this.state.isModalShown && <Modal data={this.state.modalData} callbackModal={this.callbackModal}/>}
+            </React.Fragment>
         )
     }
 }

@@ -1,6 +1,6 @@
 1) /create form - done
 2) show data on modal - done
-3) update & delete - edit in new page
+3) update & delete - edit in new page 
 4) drag and drop - done
 5) left drag and drop from inprogress to selected
-6) move modal to Notes.js file for edit purpose 
+6) move modal to Notes.js file for edit purpose - done
