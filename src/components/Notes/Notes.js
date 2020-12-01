@@ -69,7 +69,15 @@ class Notes extends React.Component{
             { type: "In Progress", status: "inprogress" },
             { type: "Done", status: "done" }
         ];
-        let notes = JSON.parse(localStorage.getItem("tasks-app"));
+                
+        let notes = [   { 
+                            heading: "Developing reactjs project", 
+                            description: "Develop Header, Footer, and Create functionality"
+                        }
+                    ];
+        if(JSON.parse(localStorage.getItem("tasks-app")) != null){
+            notes = JSON.parse(localStorage.getItem("tasks-app"));
+        }
         return(
             <React.Fragment>
                 <div className="tasks">

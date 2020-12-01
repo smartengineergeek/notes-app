@@ -7,3 +7,5 @@
 7) code redundancy - done
 8) change order on drop - done
 9) responsive css
+10) github hosting
+11) edit not navigating in github hosting
