@@ -35,3 +35,6 @@
 .success{
     color: green;
 }
+.loader{
+    width: 120px;
+}

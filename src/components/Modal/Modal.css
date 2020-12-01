@@ -41,3 +41,7 @@
   .task-body{
     padding-top: 10px;
   }
+  .modal-btns{
+    display: flex;
+    justify-content: start;
+  }

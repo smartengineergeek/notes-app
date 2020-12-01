@@ -23,10 +23,14 @@ class Modal extends React.Component{
                         <h4>Id - <span id="modal-id" />{this.props.data.id}</h4>
                         <h4>Heading - <span id="modal-heading" />{this.props.data.heading}</h4>
                         <p>Description - <span id="modal-description" />{this.props.data.description}</p>
-                        <button className="function-button">
-                            <Link to={`/update/${this.props.data.id}`}>Edit</Link>
-                        </button>
-                        <button className="danger-button" onClick={() => this.props.callbackModal("delete", this.props.data.id)}>Delete</button>
+                        <div className="modal-btns"> 
+                            <Link to={`/update/${this.props.data.id}`}>
+                                <div className="text-center function-button">
+                                    Edit
+                                </div>
+                            </Link>
+                            <button className="danger-button" onClick={() => this.props.callbackModal("delete", this.props.data.id)}>Delete</button>
+                        </div>
                     </div>
                 </div>
 

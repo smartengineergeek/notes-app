@@ -25,8 +25,7 @@ class Notes extends React.Component{
             });
             indexx > -1 && tasks.splice(indexx, 1);
             document.getElementsByClassName("task-body")[0].innerHTML = `Task id <span class="highlight">${id}</span> is deleted successfully<span class="success-tick" />`;
-            console.log(tasks)
-            // localStorage.setItem("tasks-app", JSON.stringify(tasks));
+            localStorage.setItem("tasks-app", JSON.stringify(tasks));
         }
     }
     onDragStart = (event) => {
@@ -48,8 +47,6 @@ class Notes extends React.Component{
             let tasks = JSON.parse(localStorage.getItem("tasks-app"));
             let index = -1, updateTask = null;
             tasks.forEach((task, i) => {
-                console.log("left ", (task.id).toString(), " right ", (this.state.dragId).split("-"))
-                // debugger;
                 if((task.id).toString() === (this.state.dragId).split("-")[1]){
                     task.status = status;                     
                     index = i;

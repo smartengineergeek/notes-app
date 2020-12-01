@@ -23,10 +23,8 @@ class Update extends React.Component{
     }
 
     componentDidMount(){
- //       console.log(" this.props ", this.props);
         if((this.props.location.pathname).split("/")[2] != ""){
             this.setState({ taskId: (this.props.location.pathname).split("/")[2]});
-            console.log((this.props.location.pathname).split("/")[2]);
             let id = (this.props.location.pathname).split("/")[2];
             let tasks = JSON.parse(localStorage.getItem("tasks-app"));
             if(tasks != null){
@@ -117,7 +115,7 @@ class Update extends React.Component{
                         <li className="form-row btn-row">
                             <button className="blue-button" type="button" onClick={this.clearForm}>Clear</button>                        
                             {!this.state.isLoading ? <button className="blue-button" type="submit">Update</button>:
-                            <img src="" alt="loading..." className="loader" />}                        
+                            <img src={spinner} alt="loading..." className="loader" />}                        
                         </li>
                     </ul>
                 </form>
