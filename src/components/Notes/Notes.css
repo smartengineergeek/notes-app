@@ -9,6 +9,7 @@
 .tasks-col{
     border: solid 1px lightgray;
     width: 30%;
+    padding-bottom: 50px;
 }
 .tasks-list{
     display: flex;

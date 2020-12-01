@@ -2,7 +2,6 @@
   "name": "notes-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://amahlawat.github.io/notes-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.2",

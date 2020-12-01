@@ -48,6 +48,8 @@ class Notes extends React.Component{
             let tasks = JSON.parse(localStorage.getItem("tasks-app"));
             let index = -1, updateTask = null;
             tasks.forEach((task, i) => {
+                console.log("left ", (task.id).toString(), " right ", (this.state.dragId).split("-"))
+                // debugger;
                 if((task.id).toString() === (this.state.dragId).split("-")[1]){
                     task.status = status;                     
                     index = i;
@@ -69,14 +71,19 @@ class Notes extends React.Component{
             { type: "In Progress", status: "inprogress" },
             { type: "Done", status: "done" }
         ];
-                
-        let notes = [   { 
-                            heading: "Developing reactjs project", 
-                            description: "Develop Header, Footer, and Create functionality"
-                        }
-                    ];
-        if(JSON.parse(localStorage.getItem("tasks-app")) != null){
+                    
+        let notes = null;
+        if(localStorage.getItem("tasks-app") != null){
             notes = JSON.parse(localStorage.getItem("tasks-app"));
+        }else{
+            let tasks = [{ 
+                id: new Date().getTime(),
+                heading: "Developing reactjs project", 
+                description: "Develop Header, Footer, and Create functionality",
+                status: "selected"
+            }];
+            localStorage.setItem("tasks-app", JSON.stringify(tasks));    
+            notes = tasks;
         }
         return(
             <React.Fragment>
