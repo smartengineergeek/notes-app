@@ -13,6 +13,6 @@ export const Header = () => (
 
 export const Footer = () => (
     <div className="footer">
-        developed in react
+        created in react developed by Avinash Mahlawat
     </div>
 );
